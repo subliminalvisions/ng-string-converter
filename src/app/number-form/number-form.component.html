@@ -1,0 +1,40 @@
+<div class="container pt-4">
+    <div class="row">
+      <div class="col-6">        
+          <hr>
+        <h3 class="text-center">Convert Hourly Salary to Yearly </h3>
+        <h6 class="text-center">((<i>use NG Model</i>)) </h6>
+        <form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+
+          <div class="form-group">
+            <label for="hourlyInput">insert hourly </label>
+            <input type="text" id="hourlyInput" 
+            formControlName="hourlyInput" 
+            class="form-control"
+            [ngClass]="{'form-submitted': formSubmitted}" 
+            placeholder="insert hourly "/>
+          </div>
+
+          <button type="submit" class="btn btn-primary">Convert</button>
+
+        </form>
+        
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">  
+        <div class="wrapper" *ngIf="YearlyNumString">
+              <hr>
+              <h4>Yearly Pay</h4> 
+              <div class="terminal" >
+                  <pre > {{ YearlyNumString }}
+                </pre>
+            </div>
+        </div>
+
+        <hr>
+      </div>
+    </div>
+  </div>
+  
